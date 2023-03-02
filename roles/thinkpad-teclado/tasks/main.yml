@@ -1,0 +1,17 @@
+---
+# tasks file for roles/thinkpad-teclado
+- name: Edita HKLM:\SYSTEM\CurrentControlSet\Control\Keyboard Layout
+  ansible.windows.win_regedit:
+    path: HKLM:\SYSTEM\CurrentControlSet\Control\Keyboard Layout
+    name: Scancode Map
+    data: hex:00,00,00,00,00,00,00,00,02,00,00,00,73,00,1d,e0,00,00,00,00
+    type: binary
+    state: present
+
+- name: Edita HKLM:\SYSTEM\CurrentControlSet\Control\Keyboard Layouts
+  ansible.windows.win_regedit:
+    path: HKLM:\SYSTEM\CurrentControlSet\Control\Keyboard Layouts
+    name: Scancode Map
+    data: hex:00,00,00,00,00,00,00,00,02,00,00,00,73,00,1d,e0,00,00,00,00
+    type: binary
+    state: present

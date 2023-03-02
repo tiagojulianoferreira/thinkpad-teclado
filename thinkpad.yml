@@ -1,0 +1,5 @@
+- name: Corrige Tecla Interrogação Lenovo Thinkpad
+  hosts: my_thinkpad
+  gather_facts: true
+  roles:
+    - thinkpad-teclado
